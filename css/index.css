@@ -1,0 +1,306 @@
+@font-face {
+    font-family: Minecraft;
+    src: url(../otros/Minecraft-Seven_v2.ttf);
+}
+body{
+    font-family: Minecraft;
+    background-image: url(../otros/imagenes/FondoMinecarft.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 10%;
+}
+h1{
+    position: fixed;
+    top: -20px;
+    left: 38%;
+    font-size: 5em;
+    color: black;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.2) 100%);
+    padding: 15px 7px 7px 15px;
+    backdrop-filter: blur(5px);
+    z-index: 100;
+}
+h1::after{
+    content: "OVERWORLD";
+    position: absolute;
+    top: 5px;
+    left: 1%;
+    background: linear-gradient( #6cc5f5, #0d901c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#Nether{
+    float: left;
+    position: fixed;
+    top: 10%;
+    left: 3%;
+    max-width: 20%;
+    font-size: 3em;
+    color: black;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.2) 100%);
+    padding: 15px 7px 7px 15px;
+    backdrop-filter: blur(5px);
+    z-index: 100;
+}
+
+#Nether::after{
+    content: "<- NETHER";
+    position: absolute;
+    top: 10px;
+    left: 5%;
+    background: linear-gradient( #e9700d, #a10707);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#End{
+    float: left;
+    position: fixed;
+    top: 10%;
+    left: 90%;
+    font-size: 3em;
+    color: black;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 20%, rgba(0, 0, 0, 0.1) 60%, rgba(0, 0, 0, 0.2) 100%);
+    padding: 15px 7px 7px 15px;
+    backdrop-filter: blur(5px);
+    z-index: 100;
+}
+
+#End::after{
+    content: "END ->";
+    position: absolute;
+    top: 10px;
+    left: 5%;
+    background: linear-gradient( #e8f0b2 40%, #6614f3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/*Control del pergamino de la izquierda*/
+.indice {
+    position: fixed;
+    width: 20%;
+}
+
+summary{
+    cursor: pointer;
+}
+
+.summary-indice {
+    list-style: none;
+    padding-top: 2%;
+}
+
+/*Palabra indice en el pergamino*/
+.summary-indice::after {
+    content: "ÍNDICE";
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49%, -49%);
+    font-size: xx-large;
+}
+
+/*Centro del pergamino*/
+.pergamino {
+    width: 100%;
+    height: 65dvh;
+    position: relative;
+    top: -1.5em;
+    left: 0.5em;
+}
+
+
+/*final del pergamino*/
+.fin {
+    position: relative;
+    top: -4em;
+}
+
+/*parte central*/
+.contenido-principal{
+    width: 58%;
+    height: auto;
+    float: right;
+    margin: 1% 1% 5% 3%;
+    background-color: rgb(224, 237, 244,0.9);
+    /*backdrop-filter: blur(5px);*/
+    padding: 40px;
+}
+
+
+ /*Parte de la derecha*/
+.noticias{
+    width: 12%;
+    height: auto;
+    float: right;
+    margin: 1% 0% 5% 2%;
+    padding: 0.5%;
+    background-color: rgb(0, 0, 0, 0.4)
+
+}
+h5{
+    color: whitesmoke;
+    font-size: medium;
+    background-color: rgb(0, 0, 0, 0.8);
+    padding: 1%;
+    margin-bottom: 0%;
+}
+
+.img-noticias{
+    width: 100%;
+    margin-bottom: 50%;
+}
+
+/*ORIGEN*/
+h2{
+    font-size: xx-large;
+    text-align: center;
+}
+
+p{
+    font-size: x-large;
+}
+ 
+.fotos-origen{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Imagen miniatura */
+.miniatura {
+    width: 100%; 
+    max-width: 450px; 
+    height: 450px;
+    height: auto;
+    cursor: pointer;
+    border: 15px solid transparent;
+    border-image: url(../otros/imagenes/bloque-cesped.jpg) 30;
+    transition: transform 0.3s ease;
+}
+
+.miniatura:hover {
+    transform: scale(1.1);
+}
+
+/* ventana emergente oculta por defecto */
+.ventanaEmergente {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Cuando al ventana emergente está activa */
+:target {
+    display: flex;
+}
+
+/* Imagen dentro de la ventana emergente */
+.ventanaEmergente-contenido {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+/* Botón de cerrar */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*titulos de cada apartado*/
+h3 {
+    font-size: xx-large;
+}
+
+.fauna{
+    text-align: right;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    font-size: x-large;
+}
+li+p{
+    font-size: large;
+} 
+
+.fauna-imagenes{
+    width: 10%; /* Ajusta el tamaño de la imagen (más pequeña) */
+    height: 10%; /* Mantiene las proporciones de la imagen */
+    align-self:center;
+    margin-top: 5%;
+}
+
+.animal {
+    display: flex; /* Flexbox para alinear la imagen y el texto */
+    align-items: right; /* Centra verticalmente la imagen y el texto */
+    gap: 20px; /* Espacio entre la imagen y el texto */
+
+}
+
+.descripcion-fauna {
+    max-width: 80%; /* Limita el ancho de la descripción */
+}
+
+.Oveja{
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: auto;
+    align-self:center;
+    margin-bottom: 10%;
+}
+
+.Oveja img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.Oveja-esquilada {
+    opacity: 0;
+}   
+
+.Oveja:hover .Oveja-lana {
+    opacity: 0;
+}
+
+.Oveja:hover .Oveja-esquilada {
+    opacity: 1;
+}
+
+.aldeano{
+    width: 12%;
+    height: auto;
+    margin-right: 1%;
+}
